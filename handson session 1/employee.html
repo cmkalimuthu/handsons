@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h id="h1">Hands on 1</h>
+</body>
+<script>
+    var employee={FirstName:"john",LastName:"Stoke",Salary:5000,PermanentStaff:true};
+    console.log(employee);
+    //json for employee handson2
+    var employeeJson='{"FirstName":"john","LastName":"Stoke","Salary":5000,"PermanentStaff":true}';
+    var employeeObj=JSON.parse(employeeJson);
+    console.log(employeeObj.FirstName);
+    console.log(employeeObj.LastName);
+    console.log(employeeObj.Salary);
+    console.log(employeeObj.PermanentStaff);
+    //json adding department handson3
+    var DepartmentJson='{"FirstName":"john","LastName":"Stoke","Salary":5000,"PermanentStaff":true,"Department":{"DepartmentId":3,"DepartmentName":"Payroll"}}';
+    var departmentObj=JSON.parse(DepartmentJson);
+    console.log("First Name: "+departmentObj.FirstName);
+    console.log("Last Name: "+departmentObj.LastName);
+    console.log("Salary : "+departmentObj.Salary);
+    console.log("Permanent Staff: "+departmentObj.PermanentStaff);
+    console.log("Department Id: "+departmentObj.Department.DepartmentId);
+    console.log("Department Name: "+departmentObj.Department.DepartmentName);
+    //adding skill
+    var SkillJson=
+    '{"FirstName":"john","LastName":"Stoke","Salary":5000,"PermanentStaff":true,"Department":{"DepartmentId":3,"DepartmentName":"Payroll"},"Skills":[{"Id":1,"Value":"html"},{"Id":2,"Value":"css"}]}';
+    var SkillObj=JSON.parse(SkillJson);
+    console.log("Last Name: "+SkillObj.LastName);
+    console.log("Salary : "+SkillObj.Salary);
+    console.log("First Name: "+SkillObj.FirstName);
+    console.log("Permanent Staff: "+SkillObj.PermanentStaff);
+    console.log("Department Id: "+SkillObj.Department.DepartmentId);
+    console.log("Department Name: "+SkillObj.Department.DepartmentName);
+    for (i in SkillObj.Skills) {
+  console.log("skill "+i+" "+SkillObj.Skills[i].Id+","+SkillObj.Skills[i].Value);
+}
+
+
+</script>
+</html>
