@@ -1,4 +1,5 @@
->>Hands on:
+(Jpa folder)
+>Hands on:
 *Spring Data JPA (all completed).
 *Practice Check (all completed).
 *Lombok and Sonar (all completed).
