@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+
+https://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id="john" class="com.cognizant.springlearn.Employee">
+		<constructor-arg name="id" value="1" />
+		<constructor-arg name="name" value="john" />
+		<constructor-arg name="salary" value="1000" />
+		<constructor-arg name="permanent" value="true" />
+
+	</bean>
+	<bean id="sam" class="com.cognizant.springlearn.Employee">
+		<constructor-arg name="id" value="2" />
+		<constructor-arg name="name" value="sam" />
+		<constructor-arg name="salary" value="2000" />
+		<constructor-arg name="permanent" value="false" />
+
+	</bean>
+
+	<bean id="employees" class="java.util.ArrayList">
+
+		<constructor-arg>
+
+			<list>
+
+				<ref bean="john"></ref>
+
+				<ref bean="sam"></ref>
+
+			</list>
+
+		</constructor-arg>
+
+	</bean>
+	<bean id="employeeList" class="com.cognizant.springlearn.dao.EmployeeDao">
+	<property name="employeeList" ref="employees"/>
+	</bean>
+
+</beans>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+
+https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="payroll" class="com.cognizant.springlearn.Department">
+		<constructor-arg name="id" value="1" />
+		<constructor-arg name="name" value="Pay-Roll" />
+		
+
+	</bean>
+	<bean id="hr" class="com.cognizant.springlearn.Department">
+		<constructor-arg name="id" value="2" />
+		<constructor-arg name="name" value="Hr" />
+
+	</bean>
+	<bean id="manager" class="com.cognizant.springlearn.Department">
+		<constructor-arg name="id" value="3" />
+		<constructor-arg name="name" value="manager" />
+
+	</bean>
+
+	<bean id="department" class="java.util.ArrayList">
+
+		<constructor-arg>
+
+			<list>
+
+				<ref bean="payroll"></ref>
+
+				<ref bean="hr"></ref>
+				<ref bean="manager"></ref>
+
+			</list>
+
+		</constructor-arg>
+
+	</bean>
+	<bean id="departmentList" class="com.cognizant.springlearn.dao.DepartmentDao">
+	<property name="departmentList" ref="department"/>
+	</bean>
+
+	
+
+</beans>
